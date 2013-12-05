@@ -1,4 +1,7 @@
 require 'rspec'
-require 'pry'
+require 'spec_helper.rb'
+require 'capybara/rails'
+require 'capybara/rspec'
 
-#test cases here
+config.include FactoryGirl::Syntax::Methods
+

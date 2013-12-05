@@ -1,35 +1,17 @@
-class TaxCalculation
-  TAX_RATE = 0.22
+#must implement a liability class method that receives an instance of an Employee class in order to calculate taxes owed or refund due. The method must return an instance of the Liability class.
 
-  def liability(employee)
-    calculate_liability = calculate_liability
-    if calculate_liability < 0.0
-      puts "#{employee.first_name} #{employee.last_name} will receive a refund of #{calculate_liability.abs}"
-    else
-      puts "#{employee.first_name} #{employee.last_name} has tax liability of #{calculate_liability.abs}"
-    end
-  end
+require 'csv'
 
-  private
-  def self.calculate_liability(employee)
-    owe= employee.annual_income * TAX_RATE
-    paid = employee.tax_paid
-    (paid- owe).to_i
-  end
-end
+class TaxCalculator
 
-class Employee
-  attr_reader :first_name, :last_name, :annual_income, :tax_paid
-  def initialize(data)
-    @first_name = data[:first_name]
-    @last_name = data[:last_name]
-    @annual_income= data.fetch[:annual_income, 0]  #if value is not there, it'll put a 0.
-    @tax_paid = data[:tax_paid]
-  end
-end
 
-data.each do |data|
-  employee = Employee.new(data)
-  TaxCalulation.tax_liability(employee)  # call liability on the class itself
-end
 
+#   def liability(employee)
+
+#   end
+
+# end
+
+
+
+#Note that your program's main file should handle the displaying of information as seen in the Sample Output above. Your classes and their instances should not output to the console.
