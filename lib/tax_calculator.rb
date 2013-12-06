@@ -1,17 +1,21 @@
-#must implement a liability class method that receives an instance of an Employee class in order to calculate taxes owed or refund due. The method must return an instance of the Liability class.
-
-require 'csv'
+#determine taxes owed or refund
+#must receive an instance of Employee class
+#must return instance of the Liability class
+require_relative "./liability.rb"
 
 class TaxCalculator
+  attr_reader :name, :annual_income, :tax_rate, :tax_paid
 
+  def initialize(employee)
+    @name          = name
+    @annual_income = annual_income
+    @tax_rate      = tax_rate
+    @tax_paid      = tax_paid
+  end
 
-
-#   def liability(employee)
-
-#   end
-
-# end
-
-
-
-#Note that your program's main file should handle the displaying of information as seen in the Sample Output above. Your classes and their instances should not output to the console.
+  # @param [Employee] employee - instance of employee
+  # @return [Liabality] employee's liability
+  def self.liability(employee)
+    return Liability.new(employee)
+  end
+end
